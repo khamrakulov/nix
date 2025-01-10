@@ -82,6 +82,11 @@
       telegram-desktop
       google-chrome
       spotify
+
+      # Haskell
+      haskell.compiler.ghc983
+      haskellPackages.cabal-install
+      haskellPackages.stack
     ];
   };
 
