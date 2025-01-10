@@ -125,6 +125,20 @@
     };
   };
 
+  fonts = {
+    packages = with pkgs; {
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      fira-code
+      fira-code-symbols
+      roboto
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
+    }
+  }
+
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
