@@ -10,10 +10,13 @@
     username = "xfeusw";
     homeDirectory = "/home/xfeusw";
     stateVersion = "24.11";
+    shell = "zsh";
 
     packages = with pkgs; [
       neofetch
       nnn # terminal file manager
+      zsh
+      oh-my-zsh
 
       # archives
       zip
@@ -105,28 +108,66 @@
     alacritty = {
       enable = true;
       settings = {
-        env.TERM = "xterm-256color";
         font = {
-          size = 12;
+          family = "Jetbrains Mono Nerd Font";
+          size = 10;
         };
-        scrolling.multiplier = 5;
-        selection.save_to_clipboard = true;
+        window = {
+          opacity = 0.9;
+          decorations = "full";
+        };
+        colors = {
+          primary = {
+            background = "#282a36"; # Dracula theme background
+            foreground = "#f8f8f2"; # Dracula theme foreground
+          };
+          normal = {
+            black = "#21222c";
+            red = "#ff5555";
+            green = "#50fa7b";
+            yellow = "#f1fa8c";
+            blue = "#bd93f9";
+            magenta = "#ff79c6";
+            cyan = "#8be9fd";
+            white = "#bfbfbf";
+          };
+          bright = {
+            black = "#4d4d4d";
+            red = "#ff6e6e";
+            green = "#69ff94";
+            yellow = "#ffffa5";
+            blue = "#d6acff";
+            magenta = "#ff92df";
+            cyan = "#a4ffff";
+            white = "#ffffff";
+          };
+        };
       };
     };
 
-    bash = {
+    # bash = {
+    #   enable = true;
+    #   enableCompletion = true;
+    #   # TODO add your custom bashrc here
+    #   bashrcExtra = ''
+    #     export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+    #   '';
+
+    #   # set some aliases, feel free to add more or remove some
+    #   shellAliases = {
+    #     k = "kubectl";
+    #     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
+    #     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+    #   };
+    # };
+
+    zsh = {
       enable = true;
       enableCompletion = true;
-      # TODO add your custom bashrc here
-      bashrcExtra = ''
-        export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-      '';
-
-      # set some aliases, feel free to add more or remove some
-      shellAliases = {
-        k = "kubectl";
-        urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-        urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+      oh-my-zsh = {
+        enable = true;
+        theme = "agnoster";
+        plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
       };
     };
   };
