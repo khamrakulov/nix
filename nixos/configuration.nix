@@ -61,10 +61,8 @@
       };
     };
 
-    plasma = {
-      nmBluedevil = {
-        enable = true;
-      };
+    bluedevil = {
+      enable = true;
     };
 
     printing = {
