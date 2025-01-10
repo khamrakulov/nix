@@ -128,10 +128,7 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
       fira-code
-      fira-code-symbols
       roboto
       jetbrains-mono
       nerd-fonts.jetbrains-mono
