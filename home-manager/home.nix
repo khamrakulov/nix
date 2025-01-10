@@ -16,6 +16,8 @@
       nnn # terminal file manager
       zsh
       oh-my-zsh
+      zsh-autosuggestions
+      thefuck
 
       # archives
       zip
@@ -88,15 +90,15 @@
       enable = true;
     };
 
-    starship = {
-      enable = true;
-      settings = {
-        add_newline = false;
-        aws.disabled = true;
-        gcloud.disabled = true;
-        line_break.disabled = true;
-      };
-    };
+    # starship = {
+    #   enable = true;
+    #   settings = {
+    #     add_newline = false;
+    #     aws.disabled = true;
+    #     gcloud.disabled = true;
+    #     line_break.disabled = true;
+    #   };
+    # };
 
     git = {
       enable = true;
@@ -163,10 +165,19 @@
     zsh = {
       enable = true;
       enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+      };
+      histSize = 10000;
+
       oh-my-zsh = {
         enable = true;
-        theme = "agnoster";
-        plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
+        theme = "jbergantine";
+        plugins = [ "git" "thefuck" "zsh-autosuggestions" ];
       };
     };
   };
