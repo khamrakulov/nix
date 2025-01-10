@@ -34,6 +34,10 @@
     bluetooth = {
       enable = true;
     };
+
+    pulseaudio = {
+      enable = true;
+    };
   };
 
   services = {
@@ -81,8 +85,6 @@
     };
   };
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -114,7 +116,7 @@
     git
     direnv
     bluez
-    bleuz-tools
+    bluez-tools
     blueman
 
     # Helix
