@@ -14,10 +14,10 @@
     packages = with pkgs; [
       neofetch
       nnn # terminal file manager
-      zsh
-      oh-my-zsh
-      zsh-autosuggestions
-      thefuck
+      # zsh
+      # oh-my-zsh
+      # zsh-autosuggestions
+      # thefuck
 
       # archives
       zip
@@ -161,23 +161,5 @@
     #     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
     #   };
     # };
-
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
-
-      shellAliases = {
-        ll = "ls -l";
-        update = "sudo nixos-rebuild switch";
-      };
-
-      oh-my-zsh = {
-        enable = true;
-        theme = "jbergantine";
-        plugins = [ "git" "thefuck" "zsh-autosuggestions" ];
-      };
-    };
   };
 }

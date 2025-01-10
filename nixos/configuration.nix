@@ -85,7 +85,12 @@
       isNormalUser = true;
       description = "xfeusw";
       extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [];
+      packages = with pkgs; [
+        zsh
+        oh-my-zsh
+        zsh-autosuggestions
+        thefuck
+      ];
       defaultShell = pkgs.zsh;
     };
   };
@@ -130,9 +135,26 @@
       enable = true;
     };
 
-
     firefox = {
       enable = true;
+    };
+
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+      };
+
+      oh-my-zsh = {
+        enable = true;
+        theme = "jbergantine";
+        plugins = [ "git" "thefuck" "zsh-autosuggestions" ];
+      };
     };
   };
 
