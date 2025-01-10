@@ -80,11 +80,14 @@
   security.rtkit.enable = true;
 
   # Define a user account.
-  users.users.xfeusw = {
-    isNormalUser = true;
-    description = "xfeusw";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+  users = {
+    users.defaultUserShell = pkgs.zsh;
+    users.xfeusw = {
+      isNormalUser = true;
+      description = "xfeusw";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [];
+    };
   };
 
   # Allow unfree packages
