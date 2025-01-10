@@ -30,11 +30,17 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services = {
+  hardware = {
     bluetooth = {
       enable = true;
     };
-    
+  };
+
+  services = {
+    # bluetooth = {
+    #   enable = true;
+    # };
+
     xserver = {
       enable = true;
       xkb = {
