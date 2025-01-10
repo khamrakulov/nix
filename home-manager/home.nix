@@ -181,12 +181,4 @@
       };
     };
   };
-
-  home = {
-    shell = "zsh";
-    sessionVariables = {
-      EDITOR = "nvim";
-      PATH = "${pkgs.coreutils}/bin:${pkgs.findutils}/bin:${pkgs.gnused}/bin";
-    };
-  };
 }
