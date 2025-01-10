@@ -10,7 +10,6 @@
     username = "xfeusw";
     homeDirectory = "/home/xfeusw";
     stateVersion = "24.11";
-    shell = "zsh";
 
     packages = with pkgs; [
       neofetch
@@ -169,6 +168,14 @@
         theme = "agnoster";
         plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
       };
+    };
+  };
+
+  home = {
+    shell = "zsh";
+    sessionVariables = {
+      EDITOR = "nvim";
+      PATH = "${pkgs.coreutils}/bin:${pkgs.findutils}/bin:${pkgs.gnused}/bin";
     };
   };
 }
