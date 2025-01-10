@@ -77,6 +77,7 @@
       vscode
       telegram-desktop
       google-chrome
+      spotify
     ];
   };
 
