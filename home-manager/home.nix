@@ -102,11 +102,6 @@
       };
     };
 
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
-
     mtr = {
       enable = true;
     };
