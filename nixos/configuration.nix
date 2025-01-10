@@ -91,7 +91,7 @@
         zsh-autosuggestions
         thefuck
       ];
-      defaultShell = pkgs.zsh;
+      shell = pkgs.zsh;
     };
   };
 
@@ -109,6 +109,7 @@
     bluez-tools
     blueman
     firefox
+    home-manager
 
     # nodejs
     nodejs_22
@@ -142,8 +143,9 @@
     zsh = {
       enable = true;
       enableCompletion = true;
-      autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+
+      font
 
       shellAliases = {
         ll = "ls -l";
