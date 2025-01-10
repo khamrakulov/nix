@@ -116,7 +116,7 @@
     blueman
 
     # Helix
-    inputs.helix.packages."${pgks.system}".helix
+    inputs.helix.packages."${pkgs.system}".helix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
