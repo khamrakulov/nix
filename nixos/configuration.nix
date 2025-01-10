@@ -61,10 +61,6 @@
       };
     };
 
-    bluedevil = {
-      enable = true;
-    };
-
     printing = {
       enable = true;
     };
