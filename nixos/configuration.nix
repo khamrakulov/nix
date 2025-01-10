@@ -137,7 +137,7 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.fira-code
     ];
-  }
+  };
 
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
