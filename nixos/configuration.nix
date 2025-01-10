@@ -81,12 +81,12 @@
 
   # Define a user account.
   users = {
-    defaultUserShell = pkgs.zsh;
     users.xfeusw = {
       isNormalUser = true;
       description = "xfeusw";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [];
+      defaultShell = pkgs.zsh;
     };
   };
 
