@@ -172,7 +172,6 @@
         ll = "ls -l";
         update = "sudo nixos-rebuild switch";
       };
-      histSize = 10000;
 
       oh-my-zsh = {
         enable = true;
