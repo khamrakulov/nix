@@ -81,7 +81,7 @@
 
   # Define a user account.
   users = {
-    users.defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.zsh;
     users.xfeusw = {
       isNormalUser = true;
       description = "xfeusw";
