@@ -95,6 +95,12 @@
       };
     };
 
+    git = {
+      enable = true;
+      userName = "Kamron Khamrakulov";
+      userEmail = "khamrakulovkamron@gmail.com";
+    };
+
     alacritty = {
       enable = true;
       settings = {

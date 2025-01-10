@@ -123,12 +123,6 @@
     firefox = {
       enable = true;
     };
-
-    git = {
-      enable = true;
-      userName = "Kamron Khamrakulov";
-      userEmail = "khamrakulovkamron@gmail.com";
-    };
   };
 
   fonts = {
