@@ -107,6 +107,14 @@
 
     # Helix
     inputs.helix.packages."${pkgs.system}".helix
+
+    # Fonts
+    noto-fonts
+    fira-code
+    roboto
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
   ];
 
   programs = {
@@ -123,17 +131,6 @@
     firefox = {
       enable = true;
     };
-  };
-
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts
-      fira-code
-      roboto
-      jetbrains-mono
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.fira-code
-    ];
   };
 
   # Experimental features
