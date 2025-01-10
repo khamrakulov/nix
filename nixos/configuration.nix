@@ -103,10 +103,16 @@
     inputs.helix.packages."${pkgs.system}".helix
   ];
 
-  programs.gnupg.agent = {
+  programs = {
+    gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };
+
+    mtr = {
+      enable = true;
+    };
+  };
 
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

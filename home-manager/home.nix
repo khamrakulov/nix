@@ -102,10 +102,6 @@
       };
     };
 
-    mtr = {
-      enable = true;
-    };
-
     firefox = {
       enable = true;
     };
