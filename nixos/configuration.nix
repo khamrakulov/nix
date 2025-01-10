@@ -92,14 +92,19 @@
 
   environment.systemPackages = with pkgs; [
     vim
+    nvim
     wget
     git
+    gh # github cli
     direnv
     bluez
     bluez-tools
     blueman
     firefox
-    
+
+    # nodejs
+    nodejs_22
+
     # Helix
     inputs.helix.packages."${pkgs.system}".helix
   ];
