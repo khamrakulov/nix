@@ -145,8 +145,6 @@
       enableCompletion = true;
       syntaxHighlighting.enable = true;
 
-      font
-
       shellAliases = {
         ll = "ls -l";
         update = "sudo nixos-rebuild switch";
