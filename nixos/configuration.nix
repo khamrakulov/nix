@@ -98,7 +98,8 @@
     bluez
     bluez-tools
     blueman
-
+    firefox
+    
     # Helix
     inputs.helix.packages."${pkgs.system}".helix
   ];
@@ -110,6 +111,11 @@
     };
 
     mtr = {
+      enable = true;
+    };
+
+
+    firefox = {
       enable = true;
     };
   };

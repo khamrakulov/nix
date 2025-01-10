@@ -77,7 +77,6 @@
       vscode
       telegram-desktop
       google-chrome
-      firefox
     ];
   };
 
@@ -100,10 +99,6 @@
         gcloud.disabled = true;
         line_break.disabled = true;
       };
-    };
-
-    firefox = {
-      enable = true;
     };
 
     alacritty = {
