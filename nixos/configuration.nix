@@ -49,6 +49,10 @@
       };
     };
 
+    blueman = {
+      enable = true;
+    };
+
     displayManager = {
       sddm = {
         enable = true;
