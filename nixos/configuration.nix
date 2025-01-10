@@ -92,7 +92,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    nvim
+    neovim
     wget
     git
     gh # github cli
