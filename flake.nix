@@ -19,7 +19,7 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit nixpkgs self home-manager inputs; };
+        specialArgs = { inherit nixpkgs home-manager; };
         modules = [
           ./nixos/configuration.nix
           ./nixos/modules/boot-loader.nix
