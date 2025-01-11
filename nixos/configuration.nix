@@ -100,6 +100,10 @@
         # };
       };
     };
+
+    k3s = {
+      enable = true;
+    };
   };
 
   security.rtkit.enable = true;
@@ -161,6 +165,9 @@
     clang
     llvm
     zig
+
+    # kubernetes
+    kubectl
   ];
 
   programs = {
