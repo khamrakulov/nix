@@ -13,18 +13,6 @@
       ./modules/programs.nix
       ./modules/boot-loader.nix
       ./modules/users.nix
+      ./modules/docker.nix
     ];
-
-  # Docker
-  virtualisation = {
-    docker = {
-      enable = true;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
-  };
-
-  system.stateVersion = "24.11";
 }
