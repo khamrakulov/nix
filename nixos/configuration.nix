@@ -125,6 +125,7 @@
 
     # nodejs
     nodejs_22
+    nest-cli
 
     # Helix
     inputs.helix.packages."${pkgs.system}".helix
@@ -136,6 +137,11 @@
     jetbrains-mono
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
+
+    # Rust
+    rustup
+    cargo
+    rust-analyzer
   ];
 
   programs = {
