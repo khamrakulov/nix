@@ -14,6 +14,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Nix
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
+
   networking = {
     hostName = "nixos";
     networkmanager = {
@@ -143,6 +155,12 @@
     rustup
     cargo
     rust-analyzer
+
+    # C, CPP, GCC, CLANG, LLVM, ZIG
+    gcc
+    clang
+    llvm
+    zig
   ];
 
   programs = {
@@ -187,9 +205,6 @@
       };
     };
   };
-
-  # Experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }
