@@ -184,4 +184,10 @@
     #   };
     # };
   };
+
+  home.activation.setDefaultShell = lib.mkAfter ''
+    if [[ "$SHELL" != "${pkgs.zsh}/bin/zsh" ]]; then
+      chsh -s ${pkgs.zsh}/bin/zsh
+    fi
+  '';
 }
