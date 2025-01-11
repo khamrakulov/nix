@@ -96,7 +96,7 @@
     users.xfeusw = {
       isNormalUser = true;
       description = "xfeusw";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
       packages = with pkgs; [
         zsh
         oh-my-zsh
@@ -166,6 +166,17 @@
         enable = true;
         theme = "jbergantine";
         plugins = [ "git" "thefuck" "zsh-autosuggestions" ];
+      };
+    };
+  };
+
+  # Docker
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
       };
     };
   };
