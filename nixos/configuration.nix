@@ -75,6 +75,18 @@
     openssh = {
       enable = true;
     };
+
+    nginx = {
+      enable = true;
+      virtualHosts = {
+        "example.com" = {
+          enableACME = true;
+          forceSSL = true;
+          root = "/var/www/example";
+          index = "index.html";
+        };
+      };
+    };
   };
 
   security.rtkit.enable = true;
