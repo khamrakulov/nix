@@ -162,7 +162,7 @@
         update = "sudo nixos-rebuild switch";
       };
 
-      oh-my-zsh = {
+      ohMyZsh = {
         enable = true;
         theme = "jbergantine";
         plugins = [ "git" "thefuck" "zsh-autosuggestions" ];
