@@ -41,12 +41,13 @@
 
     homeConfigurations = {
       xfeusw = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.xfeusw = import ./home-manager/home.nix;
-          }
+          ({ config, pkgs, ... }: {
+            home.username = "xfeusw";
+            home.homeDirectory = "/home/xfeusw";
+          })
+          ./home-manager/home.nix
         ];
       };
     };

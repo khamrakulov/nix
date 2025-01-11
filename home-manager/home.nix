@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   xresources.properties = {
@@ -185,9 +185,5 @@
     # };
   };
 
-  home.activation.setDefaultShell = lib.mkAfter ''
-    if [[ "$SHELL" != "${pkgs.zsh}/bin/zsh" ]]; then
-      chsh -s ${pkgs.zsh}/bin/zsh
-    fi
-  '';
+  nixpkgs.config.allowUnfree = true;
 }
