@@ -41,7 +41,7 @@
 
     homeConfigurations = {
       xfeusw = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.pkgs;
+        pkgs = nixpkgs.legacyPackages."x86_64_linux";
         modules = [
           home-manager.nixosModules.home-manager
           {
