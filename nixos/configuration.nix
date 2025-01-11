@@ -79,12 +79,12 @@
     nginx = {
       enable = true;
       virtualHosts = {
-        "example.com" = {
-          enableACME = true;
-          forceSSL = true;
-          root = "/var/www/example";
-          index = "index.html";
-        };
+        # "example.com" = {
+        #   enableACME = true;
+        #   forceSSL = true;
+        #   root = "/var/www/example";
+        #   index = "index.html";
+        # };
       };
     };
   };
