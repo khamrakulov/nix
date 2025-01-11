@@ -7,9 +7,9 @@
   };
 
   home = {
+    stateVersion = "24.11";
     username = "xfeusw";
     homeDirectory = "/home/xfeusw";
-    stateVersion = "24.11";
 
     packages = with pkgs; [
       neofetch
