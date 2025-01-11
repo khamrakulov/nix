@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./environmnt-packages.nix
+    ./environment-packages.nix
   ];
   
   networking = {
