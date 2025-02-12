@@ -24,7 +24,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.xfeusw = import ./home.nix;
+            home-manager.users.xfeusw = import ./home-manager/home.nix;
           }
         ];
       };
