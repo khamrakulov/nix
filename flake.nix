@@ -1,16 +1,20 @@
 {
-  description = "My optimized NixOS configuration with flakes and home-manager";
+  description = "NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05"; 
     home-manager.url = "github:nix-community/home-manager";
-    nixos-hardware.url = "github:NixOS/nixos-hardware"; # Optional: For better hardware support
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -18,21 +22,12 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
             home-manager.users.xfeusw = import ./home.nix;
           }
         ];
       };
-
-      # Define global packages that can be installed via `nix run .#<package>`
-      packages.${system} = {
-        hello = pkgs.hello;
-        neovim = pkgs.neovim;
-        git = pkgs.git;
-      };
-
-      defaultPackage.${system} = self.packages.${system}.neovim;
     };
 }
 
