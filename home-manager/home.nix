@@ -9,20 +9,35 @@
     git
     gh
     neovim
-    zsh
-    starship
     htop
     ripgrep
+    starship  # Fancy prompt
+    zsh
+    docker-compose
   ];
 
-  programs.zsh.enable = true;
-  programs.starship.enable = true;
-  programs.git = {
+  programs.zsh = {
     enable = true;
-    userName = "xfeusw";
-    userEmail = "khamrakulovkamron@gmail.com";
+    enableCompletion = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [ "git" "docker" ];  # Only add Oh My Zsh plugins here
+    };
+
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.zsh-autosuggestions;
+      }
+      {
+        name = "zsh-syntax-highlighting";
+        src = pkgs.zsh-syntax-highlighting;
+      }
+    ];
   };
+
+  programs.starship.enable = true;
 
   home.stateVersion = "24.11";
 }
-
