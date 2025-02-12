@@ -54,8 +54,5 @@ in {
       "vm.swappiness" = 10;  # Reduce swap usage
       "fs.inotify.max_user_watches" = 524288;  # Prevent game crashes due to file limit
     };
-
-    # Ensure `polkit` is installed (fixes potential permission issues)
-    environment.systemPackages = with pkgs; [ polkit ];
   };
 }
