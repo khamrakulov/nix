@@ -6,7 +6,7 @@
   imports = [
     ./packages.nix
     ./shell.nix
-    ./programs.nix
+    ./modules/programs/default.nix
   ];
 
   home.stateVersion = "24.11";
