@@ -37,6 +37,7 @@ in {
       libstrangle
       vkBasalt
       polkit
+      gamemode
 
       # Vulkan-related packages
       vulkan-loader
@@ -44,7 +45,8 @@ in {
       vulkan-validation-layers
 
       # Mesa drivers (fix for missing attribute issue)
-    ] ++ attrValues pkgs.mesa.drivers;
+      mesa.drivers
+    ];
 
     # Enable udev rules for controllers
     services.udev.packages = [ pkgs.steam ];
