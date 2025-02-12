@@ -19,5 +19,10 @@
 
   # Handle splash image correctly
   boot.loader.grub.splashImage = "/boot/image.jpg";
+
+  environment.systemPackages = with pkgs; [
+    grub2
+    grub2_efi
+  ];
 }
 
