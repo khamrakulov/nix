@@ -15,7 +15,6 @@
       ./modules/programs/default.nix
       ./modules/gaming.nix
     ];
-  myGaming.enable = true;  
 
   # Set system state version
   system.stateVersion = "24.11";
