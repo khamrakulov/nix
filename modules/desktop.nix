@@ -51,7 +51,7 @@
 
   services.xserver.displayManager.gdm.settings = {
     "org.gnome.mutter" = {
-      "experimental-features" = [ "scale-monitor-framebuffer" ];
+      "experimental-features" = "scale-monitor-framebuffer";
     };
   };
 }
