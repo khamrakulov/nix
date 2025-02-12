@@ -12,7 +12,7 @@
       ./modules/audio.nix
       ./modules/boot/default.nix
       ./modules/bluetooth.nix
-      ./modules/programs/neovim.nix
+      ./modules/programs/default.nix
       ./modules/gaming.nix
     ];
   myGaming.enable = true;  

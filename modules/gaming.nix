@@ -34,6 +34,7 @@ in {
       gamescope  # Compositing for smooth gaming
       libstrangle  # FPS limiter
       vkBasalt  # Post-processing effects
+      lutris
     ] ++ vulkanPackages ++ mesaPackages;
 
     # Enable udev rules for controllers
