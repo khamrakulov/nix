@@ -9,6 +9,8 @@
 
     # Set timeout for boot menu
     timeoutStyle = "menu";  # Show menu always (alternatives: "countdown" or "hidden")
+    theme = "${pkgs.grub2}/share/grub/themes/vimix/theme.txt";
+    default = "saved";
   };
 
   # Bootloader timeout
