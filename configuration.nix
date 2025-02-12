@@ -4,7 +4,7 @@
     [ 
       ./hardware-configuration.nix
       ./modules/nixpkgs.nix
-      ./modules/desktop.nix
+      ./modules/desktop/default.nix
       ./modules/networking.nix
       ./modules/security.nix
       ./modules/users.nix
