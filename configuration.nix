@@ -9,9 +9,10 @@
       ./modules/security.nix
       ./modules/users.nix
       ./modules/docker.nix
-      ./modules/system-optimizations.nix
+      ./modules/system.nix
       ./modules/audio.nix
       ./modules/boot/default.nix
+      ./modules/bluetooth.nix
     ];
 
   # Set system state version
