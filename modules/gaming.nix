@@ -2,24 +2,24 @@
 
 let
   vulkanPackages = with pkgs; [
-    vulkan-tools  # Vulkan utilities
-    vulkan-validation-layers  # Debugging
-    vulkan-loader  # Vulkan loader
+    vulkan-tools
+    vulkan-validation-layers
+    vulkan-loader
     vulkan-headers
   ];
 
   mesaPackages = with pkgs; [
-    mesa  # OpenGL & Vulkan drivers
+    mesa
     mesa-demos
-    libva  # Video acceleration
+    libva
     libvdpau
   ];
   
 in {
-  options.myGaming.enable = lib.mkEnableOption "Enable gaming optimizations";
+  options.programs.gaming.enable = lib.mkEnableOption "Enable gaming optimizations";
   
-  config = lib.mkIf config.myGaming.enable {
-    
+  config = lib.mkIf config.programs.gaming.enable {
+
     # Enable Steam
     programs.steam.enable = true;
 
@@ -28,23 +28,23 @@ in {
 
     # Install gaming-related packages
     environment.systemPackages = with pkgs; [
-      lutris  # Lutris (does not have a module, only a package)
-      wineWowPackages.stable  # Wine for Windows games
-      winetricks  # Extra tools for Wine
-      mangohud  # FPS overlay
-      goverlay  # GUI for Mangohud
-      gamescope  # Compositing for smooth gaming
-      libstrangle  # FPS limiter
-      vkBasalt  # Post-processing effects
+      lutris
+      wineWowPackages.stable
+      winetricks
+      mangohud
+      goverlay
+      gamescope
+      libstrangle
+      vkBasalt
+      polkit
 
-      # Vulkan-related packages (replacing pkgs.vulkanPackages)
+      # Vulkan-related packages
       vulkan-loader
       vulkan-tools
       vulkan-validation-layers
 
-      # Mesa drivers
-      mesa.drivers
-    ];
+      # Mesa drivers (fix for missing attribute issue)
+    ] ++ attrValues pkgs.mesa.drivers;
 
     # Enable udev rules for controllers
     services.udev.packages = [ pkgs.steam ];
@@ -55,14 +55,7 @@ in {
       "fs.inotify.max_user_watches" = 524288;  # Prevent game crashes due to file limit
     };
 
-    # Enable performance tweaks for CPU & GPU
-    systemd.services.gamemode = {
-      description = "Optimize system performance for gaming";
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        ExecStart = "${pkgs.gamemode}/bin/gamemoded";
-        Restart = "always";
-      };
-    };
+    # Ensure `polkit` is installed (fixes potential permission issues)
+    environment.systemPackages = with pkgs; [ polkit ];
   };
 }
