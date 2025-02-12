@@ -43,5 +43,16 @@
     gnomeExtensions.pop-shell  # Tiling window manager for GNOME
     gnomeExtensions.dash-to-dock
   ];
+
+  environment.sessionVariables = {
+    "GDK_SCALE" = "0.8";
+    "GDK_DPI_SCALE" = "0.8";
+  }
+
+  services.xserver.displayManager.gdm.settings = {
+    "org.gnome.mutter" = {
+      "experimental-features" = [ "scale-monitor-framebuffer" ];
+    };
+  };
 }
 
