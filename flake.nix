@@ -24,14 +24,14 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.xfeusw = import ./home-manager/home.nix;
+            home-manager.users.xfeusw = import ./home/default.nix;
           }
         ];
       };
 
       homeConfigurations.xfeusw = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	modules = [ ./home-manager/home.nix ];
+	modules = [ ./home/default.nix ];
       };
     };
 }
