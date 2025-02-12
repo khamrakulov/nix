@@ -36,7 +36,12 @@ in {
       gamescope  # Compositing for smooth gaming
       libstrangle  # FPS limiter
       vkBasalt  # Post-processing effects
-    ] ++ pkgs.vulkanPackages ++ pkgs.mesaPackages;
+
+      # Vulkan-related packages (replacing pkgs.vulkanPackages)
+      vulkan-loader
+      vulkan-tools
+      vulkan-validation-layers
+    ] ++ pkgs.mesa.drivers;  # Replace pkgs.mesaPackages with pkgs.mesa.drivers
 
     # Enable udev rules for controllers
     services.udev.packages = [ pkgs.steam ];
@@ -56,6 +61,5 @@ in {
         Restart = "always";
       };
     };
-
   };
 }
