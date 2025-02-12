@@ -18,7 +18,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Handle splash image correctly
-  environment.etc."grub-splash.jpg".source = /home/xfeusw/Wallpapers/001.jpg;
-  boot.loader.grub.splashImage = "/etc/grub-splash.jpg";
+  boot.loader.grub.splashImage = "/etc/image.jpg";
 }
 
