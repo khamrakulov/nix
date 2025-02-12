@@ -8,6 +8,7 @@
       ./modules/networking.nix
       ./modules/security.nix
       ./modules/users.nix
+      ./modules/docker.nix
     ];
 
   # Bootloader

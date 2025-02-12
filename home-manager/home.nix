@@ -14,6 +14,7 @@
     starship  # Fancy prompt
     zsh
     docker-compose
+    spotify
   ];
 
   programs.zsh = {
