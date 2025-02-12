@@ -39,7 +39,7 @@
 
   # Essential GNOME Apps
   environment.systemPackages = with pkgs; [
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnomeExtensions.pop-shell  # Tiling window manager for GNOME
     gnomeExtensions.dash-to-dock
   ];
