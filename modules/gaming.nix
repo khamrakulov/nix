@@ -20,13 +20,15 @@ in {
   
   config = lib.mkIf config.myGaming.enable {
     
-    # Enable Steam, Lutris, and Wine for gaming
+    # Enable Steam
     programs.steam.enable = true;
-    programs.lutris.enable = true;
-    programs.gamemode.enable = true;  # Optimizes CPU/GPU when gaming
-    
+
+    # Enable Gamemode (optimizes CPU/GPU when gaming)
+    programs.gamemode.enable = true;
+
     # Install gaming-related packages
     environment.systemPackages = with pkgs; [
+      lutris  # Lutris (does not have a module, only a package)
       wineWowPackages.stable  # Wine for Windows games
       winetricks  # Extra tools for Wine
       mangohud  # FPS overlay
@@ -34,8 +36,7 @@ in {
       gamescope  # Compositing for smooth gaming
       libstrangle  # FPS limiter
       vkBasalt  # Post-processing effects
-      lutris
-    ] ++ vulkanPackages ++ mesaPackages;
+    ] ++ pkgs.vulkanPackages ++ pkgs.mesaPackages;
 
     # Enable udev rules for controllers
     services.udev.packages = [ pkgs.steam ];
