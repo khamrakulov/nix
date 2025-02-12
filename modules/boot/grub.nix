@@ -2,16 +2,23 @@
 {
   boot.loader.grub = {
     enable = true;
-    device = "nodev";  # UEFI: "nodev", BIOS: "/dev/sdX"
-    useOSProber = true;  # Detect other OSes (if dual-booting)
+    device = "nodev";  # Keep this for UEFI systems
+
+    efiSupport = true;  # Ensure GRUB installs correctly for UEFI
+    useOSProber = true;  # Enable OS detection for dual-booting
+
+    # Set timeout for boot menu
+    timeoutStyle = "menu";  # Show menu always (alternatives: "countdown" or "hidden")
   };
 
-  # Use this instead of `boot.loader.grub.timeout`
-  boot.loader.timeout = 5;  # GRUB menu timeout
+  # Bootloader timeout
+  boot.loader.timeout = 5;
 
-  # Optional: Remove or fix splash image
-  boot.loader.grub.splashImage = "/home/xfeusw/Wallpapers/001.jpg";  # Ensure this file exists
-
-  # Enable EFI boot support (for UEFI)
+  # Ensure GRUB can modify EFI variables
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Handle splash image correctly
+  environment.etc."grub-splash.jpg".source = /home/xfeusw/Wallpapers/001.jpg;
+  boot.loader.grub.splashImage = "/etc/grub-splash.jpg";
 }
+
