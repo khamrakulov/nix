@@ -17,6 +17,11 @@
     spotify
   ];
 
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = "1";  # Enable Wayland support in Firefox
+    LIBVA_DRIVER_NAME = "intel";  # Adjust for AMD/NVIDIA
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
