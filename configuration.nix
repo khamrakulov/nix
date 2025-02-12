@@ -2,7 +2,6 @@
 {
   imports =
     [ 
-      ./hardware-configuration.nix
       ./modules/nixpkgs.nix
       ./modules/desktop/default.nix
       ./modules/networking.nix
@@ -14,7 +13,9 @@
       ./modules/boot/default.nix
       ./modules/bluetooth.nix
       ./modules/programs/neovim.nix
+      ./modules/gaming.nix
     ];
+  myGaming.enable = true;  
 
   # Set system state version
   system.stateVersion = "24.11";
