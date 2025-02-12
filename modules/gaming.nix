@@ -41,7 +41,7 @@ in {
       vulkan-loader
       vulkan-tools
       vulkan-validation-layers
-    ] ++ attrValues pkgs.mesa.drivers;  # Replace pkgs.mesaPackages with pkgs.mesa.drivers
+    ] ++ builtins.attrValues pkgs.mesa.drivers;  # Replace pkgs.mesaPackages with pkgs.mesa.drivers
 
     # Enable udev rules for controllers
     services.udev.packages = [ pkgs.steam ];
