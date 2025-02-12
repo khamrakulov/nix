@@ -13,12 +13,13 @@
     # Advanced PipeWire settings
     extraConfig.pipewire = {
       "context.properties" = {
-      "default.clock.rate" = 48000;
-      "default.clock.quantum" = 64;
-      "default.clock.min-quantum" = 32;
+        "default.clock.rate" = 48000;
+        "default.clock.quantum" = 64;
+        "default.clock.min-quantum" = 32;
+      };
     };
   };
-
+  
   environment.systemPackages = with pkgs; [
     pavucontrol  # GUI to manage sound settings
     helvum       # PipeWire audio graph manager
