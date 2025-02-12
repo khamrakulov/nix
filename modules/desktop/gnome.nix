@@ -1,22 +1,20 @@
 { config, pkgs, ... }:
 {
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.settings."org.gnome.mutter".experimental-features = "scale-monitor-framebuffer";
+  };
 
   # GNOME Performance Optimizations
   environment.sessionVariables = {
-    "GDK_SCALE" = "0.8";  # Scale UI to 80%
-    "GDK_DPI_SCALE" = "0.8";
-  };
-
-  services.xserver.displayManager.gdm.settings = {
-    "org.gnome.mutter" = {
-      "experimental-features" = "scale-monitor-framebuffer";
-    };
+    GDK_SCALE = "0.8";
+    GDK_DPI_SCALE = "0.8";
   };
 
   programs.dconf.enable = true;
+
   systemd.user.services.gnome-settings-daemon = {
     enable = true;
     script = ''
@@ -32,7 +30,8 @@
   environment.systemPackages = with pkgs; [
     firefox
     gnome-tweaks
-    gnomeExtensions.pop-shell  # Tiling window manager for GNOME
+    gnomeExtensions.pop-shell
     gnomeExtensions.dash-to-dock
   ];
 }
+
