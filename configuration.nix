@@ -13,6 +13,7 @@
       ./modules/audio.nix
       ./modules/boot/default.nix
       ./modules/bluetooth.nix
+      ./modules/programs/neovim.nix
     ];
 
   # Set system state version
