@@ -18,6 +18,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Handle splash image correctly
-  boot.loader.grub.splashImage = "/etc/image.jpg";
+  boot.loader.grub.splashImage = "/boot/image.jpg";
 }
 
