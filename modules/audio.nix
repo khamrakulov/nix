@@ -11,12 +11,11 @@
     jack.enable = true;   # Enable JACK for low-latency audio
 
     # Advanced PipeWire settings
-    config.pipewire = {
+    extraConfig.pipewire = {
       "context.properties" = {
-        "default.clock.rate" = 48000;  # Set default sample rate to 48kHz
-        "default.clock.quantum" = 64;  # Reduce latency
-        "default.clock.min-quantum" = 32;
-      };
+      "default.clock.rate" = 48000;
+      "default.clock.quantum" = 64;
+      "default.clock.min-quantum" = 32;
     };
   };
 
