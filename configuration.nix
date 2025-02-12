@@ -10,11 +10,9 @@
       ./modules/users.nix
       ./modules/docker.nix
       ./modules/system-optimizations.nix
+      ./modules/audio.nix
+      ./modules/boot/default.nix
     ];
-
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Set system state version
   system.stateVersion = "24.11";
