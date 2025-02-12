@@ -9,6 +9,7 @@
       ./modules/security.nix
       ./modules/users.nix
       ./modules/docker.nix
+      ./modules/system-optimizations.nix
     ];
 
   # Bootloader
