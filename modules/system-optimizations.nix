@@ -1,3 +1,4 @@
+# modules/system-opt
 { config, pkgs, ... }:
 {
   # Optimize CPU performance
@@ -5,9 +6,6 @@
 
   # Enable Zswap (better memory management)
   zramSwap.enable = true;
-
-  systemd.services.NetworkManager.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
-  systemd.defaultTimeoutStartSec = "10s";  # Reduce startup timeout
 
   nix.gc = {
     automatic = true;
