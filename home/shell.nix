@@ -22,4 +22,8 @@
   };
 
   programs.starship.enable = true;
+
+  home.sessionVariables = {
+    SHELL = "/run/current-system/sw/bin/zsh";
+  };
 }

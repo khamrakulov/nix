@@ -18,5 +18,6 @@
     pnpm
     nest-cli
     rustup
+    pgrok
   ];
 }
