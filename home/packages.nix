@@ -13,5 +13,8 @@
     docker-compose
     spotify
     discord
+    nodejs
+    rustup
+    cargo
   ];
 }
