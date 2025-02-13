@@ -2,9 +2,8 @@
 {
   boot.loader.grub = {
     enable = true;
-    device = "/dev/sda";  # Keep this for UEFI systems
-
-    efiSupport = true;  # Ensure GRUB installs correctly for UEFI
+    device = "nodev";  # Use "nodev" for UEFI systems
+    efiSupport = true;
     # useOSProber = true;  # Enable OS detection for dual-booting
 
     configurationLimit = 10;
@@ -31,4 +30,3 @@
     sleek-grub-theme
   ];
 }
-
