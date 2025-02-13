@@ -2,7 +2,7 @@
 {
   boot.loader.grub = {
     enable = true;
-    device = "/dev/sda1";  # Keep this for UEFI systems
+    device = "/dev/sda";  # Keep this for UEFI systems
 
     efiSupport = true;  # Ensure GRUB installs correctly for UEFI
     # useOSProber = true;  # Enable OS detection for dual-booting
@@ -27,15 +27,13 @@
   # Ensure GRUB can modify EFI variables
   boot.loader.efi = {
     canTouchEfiVariables = true;
-    efiSysMountPoint = "/boot/efi";  
+    efiSysMountPoint = "/boot";  
   };
 
   # Handle splash image correctly
   boot.loader.grub.splashImage = "/boot/image.jpg";
 
   environment.systemPackages = with pkgs; [
-    grub2
-    grub2_efi
     sleek-grub-theme
   ];
 }
