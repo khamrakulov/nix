@@ -9,8 +9,8 @@
 
     # Set timeout for boot menu
     timeoutStyle = "menu";  # Show menu always (alternatives: "countdown" or "hidden")
-    theme = "${pkgs.grub2}/share/grub/themes/vimix/theme.txt";
-    default = "saved";
+    theme = "${pkgs.sleek-grub-theme}/share/grub/themes/sleek/theme.txt";
+    default = "saved";-
   };
 
   # Bootloader timeout
@@ -25,6 +25,7 @@
   environment.systemPackages = with pkgs; [
     grub2
     grub2_efi
+    sleek-grub-theme
   ];
 }
 
