@@ -11,7 +11,7 @@
 
     # Set timeout for boot menu
     timeoutStyle = "menu";  # Show menu always (alternatives: "countdown" or "hidden")
-    theme = "${pkgs.sleek-grub-theme}/theme.txt";
+    theme = "${pkgs.sleek-grub-theme}";
     default = "saved";
 
     extraConfig = ''
