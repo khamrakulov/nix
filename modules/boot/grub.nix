@@ -7,7 +7,7 @@
     efiSupport = true;  # Ensure GRUB installs correctly for UEFI
     useOSProber = true;  # Enable OS detection for dual-booting
 
-    configurationLimit = 10;
+    configurationLimit = 10;-
 
     # Set timeout for boot menu
     timeoutStyle = "menu";  # Show menu always (alternatives: "countdown" or "hidden")
