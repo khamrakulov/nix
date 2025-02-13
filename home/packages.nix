@@ -12,5 +12,6 @@
     zsh
     docker-compose
     spotify
+    discord
   ];
 }
