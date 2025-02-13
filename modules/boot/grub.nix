@@ -25,7 +25,7 @@
   };
 
   # Handle splash image correctly
-  boot.loader.grub.splashImage = "/boot/image.jpg";
+  # boot.loader.grub.splashImage = "/boot/image.jpg";
 
   environment.systemPackages = with pkgs; [
     sleek-grub-theme
