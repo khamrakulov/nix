@@ -5,7 +5,7 @@
     device = "nodev";  # Keep this for UEFI systems
 
     efiSupport = true;  # Ensure GRUB installs correctly for UEFI
-    useOSProber = true;  # Enable OS detection for dual-booting
+    # useOSProber = true;  # Enable OS detection for dual-booting
 
     configurationLimit = 10;
 
