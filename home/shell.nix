@@ -4,7 +4,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    
+
     # Oh My Zsh configuration
     oh-my-zsh = {
       enable = true;
