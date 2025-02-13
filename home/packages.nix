@@ -14,6 +14,9 @@
     spotify
     discord
     nodejs
+    yarn
+    pnpm
+    nest-cli
     rustup
   ];
 }
