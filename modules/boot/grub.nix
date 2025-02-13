@@ -25,7 +25,10 @@
   boot.loader.timeout = 5;
 
   # Ensure GRUB can modify EFI variables
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi = {
+    canTouchEfiVariables = true;
+    efiSysMountPoint = "/boot/efi";  
+  };
 
   # Handle splash image correctly
   boot.loader.grub.splashImage = "/boot/image.jpg";
