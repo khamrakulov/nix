@@ -15,6 +15,5 @@
     discord
     nodejs
     rustup
-    cargo
   ];
 }
