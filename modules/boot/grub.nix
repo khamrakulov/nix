@@ -13,12 +13,6 @@
     timeoutStyle = "menu";  # Show menu always (alternatives: "countdown" or "hidden")
     theme = "${pkgs.sleek-grub-theme}";
     default = "saved";
-
-    extraConfig = ''
-      insmod efi_gop
-      insmod efi_uga
-      insmod gfxterm
-    '';
   };
 
   # Bootloader timeout
