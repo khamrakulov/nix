@@ -18,8 +18,4 @@
       RemainAfterExit = true;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    efibootmgr
-  ];
 }
