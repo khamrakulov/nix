@@ -19,5 +19,6 @@
     nest-cli
     rustup
     postman
+    ngrok
   ];
 }
