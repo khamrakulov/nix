@@ -20,6 +20,7 @@
     rustup
     postman
     ngrok
+    neofetch
     # Photo editing tools
     darktable
     rawtherapee
