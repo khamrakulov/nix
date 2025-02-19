@@ -24,10 +24,7 @@
     darktable
     rawtherapee
     digikam
-    photoflow
-    lightzone
     gimp
     krita
-    inkspace
   ];
 }
