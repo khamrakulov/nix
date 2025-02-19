@@ -20,5 +20,14 @@
     rustup
     postman
     ngrok
+    # Photo editing tools
+    darktable
+    rawtherapee
+    digikam
+    photoflow
+    lightzone
+    gimp
+    krita
+    inkspace
   ];
 }
