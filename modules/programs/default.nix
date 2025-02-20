@@ -4,5 +4,6 @@
   imports = [
     ./steam.nix
     ./neovim.nix
+    ./php.nix
   ];
 }
