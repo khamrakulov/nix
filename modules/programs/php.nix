@@ -2,7 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    php
+    php84
+    php84Packages.composer
   ];
 
   services.phpfpm.pools.laravel = {
