@@ -35,7 +35,7 @@
   };
 
   # Enable Starship prompt
-  programs.starship.enable = true;
+  programs.starship.enable = true;-
 
   # Set default shell properly
   home.sessionVariables = {
