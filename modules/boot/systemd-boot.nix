@@ -1,11 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  boot = {
-    loader = {
-      systemd-boot.enable = true;  # Enable systemd-boot as the bootloader
-      efi.canTouchEfiVariables = true;  # Allow modifying EFI variables
-    };
+  boot.loader = {
+    systemd-boot.enable = true;  # Enable systemd-boot as the bootloader
+    efi.canTouchEfiVariables = true;  # Allow modifying EFI variables
   };
 
   systemd.services.reboot-fix = {
@@ -14,7 +12,7 @@
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.systemd}/bin/bootctl update";
+      ExecStart = "${pkgs.systemd}/bin/bootctl update || true";  # Ignore errors
       RemainAfterExit = true;
     };
   };
