@@ -7,8 +7,8 @@
   ];
 
   services.phpfpm.pools.laravel = {
-    user = "nginx";  # Change this if using Apache or another user
-    group = "nginx";
+    user = "xfeusw";  # Change this if using Apache or another user
+    group = "xfeusw";
     phpOptions = ''
       post_max_size = 50M
       upload_max_filesize = 50M
