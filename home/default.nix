@@ -7,6 +7,7 @@
     ./packages.nix
     ./shell.nix
     ./modules/programs/default.nix
+    ./fonts.nix
   ];
 
   home.stateVersion = "24.11";

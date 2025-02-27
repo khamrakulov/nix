@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05"; 
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -32,7 +32,7 @@
 
       homeConfigurations.xfeusw = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	modules = [ ./home/default.nix ];
+	      modules = [ ./home/default.nix ];
       };
     };
 }

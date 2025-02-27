@@ -1,1 +1,2 @@
-hardware-configuration.nixflake.lock
+hardware-configuration.nix
+flake.lock
