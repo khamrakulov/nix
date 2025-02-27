@@ -19,8 +19,6 @@
     nest-cli
     rustup
     gcc
-    clang
-    mold
     postman
     ngrok
     neofetch
