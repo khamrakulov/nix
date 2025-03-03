@@ -22,6 +22,7 @@
     postman
     ngrok
     neofetch
+    nixfmt-classic
     # Photo editing tools
     darktable
     rawtherapee
