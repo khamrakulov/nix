@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [ "https://cache.nixos.org/" ];
@@ -8,9 +7,5 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    direnv
-    watchexec
-    sqlx-cli
-  ];
+  environment.systemPackages = with pkgs; [ direnv watchexec openssl ];
 }

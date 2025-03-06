@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   home.packages = with pkgs; [
     vscode
     telegram-desktop
@@ -8,7 +7,7 @@
     neovim
     htop
     ripgrep
-    starship  # Fancy prompt
+    starship # Fancy prompt
     zsh
     docker-compose
     spotify
@@ -23,6 +22,7 @@
     ngrok
     neofetch
     nixfmt-classic
+    sqlx-cli
     # Photo editing tools
     darktable
     rawtherapee
