@@ -7,5 +7,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ direnv watchexec openssl pkg-config ];
+  environment.systemPackages = with pkgs; [
+    direnv
+    watchexec
+    openssl
+    openssl.dev
+    pkg-config
+  ];
 }
