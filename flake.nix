@@ -32,9 +32,24 @@
 
       homeConfigurations.xfeusw = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	      modules = [ ./home/default.nix ];
+        modules = [ ./home/default.nix ];
+      };
+
+      devShells.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+        buildInputs = [
+          nixpkgs.openssl
+          nixpkgs.openssl.dev
+          nixpkgs.pkg-config
+          nixpkgs.gcc
+        ];
+        shellHook = ''
+          export OPENSSL_DIR=${nixpkgs.openssl}
+          export OPENSSL_LIB_DIR=$OPENSSL_DIR/lib
+          export OPENSSL_INCLUDE_DIR=$OPENSSL_DIR/include
+          export PKG_CONFIG_PATH=$OPENSSL_DIR/lib/pkgconfig
+          export OPENSSL_NO_VENDOR=1
+        '';
       };
     };
 }
-
 
