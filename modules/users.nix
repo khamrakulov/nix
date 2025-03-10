@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 {
-  programs.zsh.enable = true;
   users.users.xfeusw = {
     isNormalUser = true;
     description = "xfeusw";
