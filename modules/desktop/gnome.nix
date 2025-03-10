@@ -28,7 +28,6 @@
 
   # Essential GNOME Apps
   environment.systemPackages = with pkgs; [
-    firefox
     gnome-tweaks
     gnomeExtensions.pop-shell
     gnomeExtensions.dash-to-dock
