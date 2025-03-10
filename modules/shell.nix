@@ -38,16 +38,4 @@
   programs.starship.enable = true;
 
   programs.git.enable = true;
-
-  # Set default shell properly
-  home.sessionVariables = {
-    SHELL = "${pkgs.zsh}/bin/zsh";
-  };
-
-  home.shellAliases = { zsh = "exec zsh"; };
-
-  home.file.".zshrc".text = ''
-    export SHELL=${pkgs.zsh}/bin/zsh
-    exec ${pkgs.zsh}/bin/zsh
-  '';
 }
