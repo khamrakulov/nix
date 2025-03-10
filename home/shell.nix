@@ -37,6 +37,8 @@
   # Enable Starship prompt
   programs.starship.enable = true;
 
+  programs.git.enable = true;
+
   # Set default shell properly
   home.sessionVariables = {
     SHELL = "${pkgs.zsh}/bin/zsh";

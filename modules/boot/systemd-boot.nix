@@ -12,7 +12,7 @@
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.systemd}/bin/bootctl update || exit 0";  # Ignore failures
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.systemd}/bin/bootctl update || true'";
       RemainAfterExit = true;
     };
   };
