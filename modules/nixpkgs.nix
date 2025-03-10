@@ -7,5 +7,5 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ direnv watchexec firefox ];
+  environment.systemPackages = with pkgs; [ direnv watchexec firefox zsh ];
 }
