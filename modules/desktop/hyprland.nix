@@ -1,21 +1,33 @@
 { config, pkgs, ... }:
 
 {
+  # Enable Xserver and SDDM for Wayland
   services = {
     xserver.enable = true;
 
-    # Enable SDDM with Wayland support
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
     };
+
+    # Input optimizations (for smoother touchpad & keyboard experience)
+    libinput = {
+      enable = true;
+      touchpad = {
+        naturalScrolling = true;
+        tapping = true;
+        scrollMethod = "twofinger";
+      };
+    };
   };
 
+  # Enable Hyprland and GSettings compatibility
   programs = {
     hyprland.enable = true;
-    dconf.enable = true; # Ensures compatibility with apps that use GSettings
+    dconf.enable = true;
   };
 
+  # Essential and quality-of-life applications
   environment.systemPackages = with pkgs; [
     # Essentials
     waybar         # Status bar
@@ -24,16 +36,23 @@
     alacritty      # Terminal
     hyprpaper      # Wallpaper
     
-    # Quality-of-life improvements
-    wl-clipboard   # Clipboard support
+    # Quality-of-life tools
+    wl-clipboard   # Clipboard support (copy-paste)
     grim           # Screenshot tool
-    slurp          # Region selection (for grim)
-    xdg-desktop-portal-hyprland # Ensures portal compatibility
+    slurp          # Region selection for screenshots
+    xdg-desktop-portal-hyprland # Ensures Wayland compatibility for apps
     mako           # Alternative lightweight notification daemon
-    networkmanagerapplet # GUI for NetworkManager
+    networkmanagerapplet # GUI for managing network connections
+    
+    # Performance & Utility Tools
+    fastfetch      # System info fetcher (like neofetch but faster)
+    brightnessctl  # Control screen brightness
+    pavucontrol    # Audio control GUI
+    playerctl      # Media control from keyboard
+    kanshi         # Auto-detect and configure external monitors
   ];
 
-  # Ensure Wayland environment variables are set properly
+  # Wayland-specific environment variables for smoother performance
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "wayland";
     XDG_CURRENT_DESKTOP = "Hyprland";
@@ -47,14 +66,13 @@
 
   # Enable networking tools
   networking.networkmanager.enable = true;
-  
-  # Improve input experience
-  services.libinput = {
+
+  # Systemd user services for Hyprland settings
+  systemd.user.services.hyprland-settings = {
     enable = true;
-    touchpad = {
-      naturalScrolling = true;
-      tapping = true;
-      scrollMethod = "twofinger";
-    };
+    script = ''
+      gsettings set org.gnome.desktop.interface enable-animations false
+      gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+    '';
   };
 }
