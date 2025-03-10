@@ -23,15 +23,6 @@
         src = pkgs.zsh-syntax-highlighting;
       }
     ];
-
-    # Extra Zsh configuration
-    initExtra = ''
-      # Ensure the correct path for Starship
-      export PATH="$HOME/.cargo/bin:$HOME/.composer/vendor/bin:/home/xfeusw/scripts:/etc/profiles/per-user/${config.home.username}/bin:$PATH"
-
-      # Fix Starship initialization issue
-      eval "$(starship init zsh)"
-    '';
   };
 
   # Enable Starship prompt
