@@ -23,6 +23,7 @@
     neofetch
     nixfmt-classic
     sqlx-cli
+    kitty
     # Photo editing tools
     darktable
     rawtherapee
