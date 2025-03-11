@@ -14,7 +14,6 @@
       ./modules/bluetooth.nix
       ./modules/programs/default.nix
       ./modules/gaming.nix
-      ./modules/shell.nix
     ];
 
   # Set system state version

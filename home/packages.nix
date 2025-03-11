@@ -30,5 +30,6 @@
     digikam
     gimp
     krita
+    inkscape-with-extensions
   ];
 }
