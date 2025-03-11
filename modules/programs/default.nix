@@ -1,4 +1,4 @@
 # home/modules/programs/default.nix
 { config, pkgs, ... }: {
-  imports = [ ./steam.nix ./neovim.nix ./php.nix ];
+  imports = [ ./steam.nix ./neovim.nix ./php.nix ./shell.nix ];
 }
