@@ -6,4 +6,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
+
+  users.defaultUserShell = pkgs.zsh;
 }

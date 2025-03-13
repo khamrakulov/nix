@@ -23,19 +23,7 @@
         src = pkgs.zsh-syntax-highlighting;
       }
     ];
-
-    # Extra Zsh configuration
-    initExtra = ''
-      # Ensure the correct path for Starship
-      export PATH="$HOME/.cargo/bin:$HOME/.composer/vendor/bin:/home/xfeusw/scripts:/etc/profiles/per-user/${config.home.username}/bin:$PATH"
-
-      # Fix Starship initialization issue
-      eval "$(starship init zsh)"
-    '';
   };
-
-  # Enable Starship prompt
-  programs.starship.enable = true;
 
   programs.git.enable = true;
 
@@ -43,11 +31,4 @@
   home.sessionVariables = {
     SHELL = "${pkgs.zsh}/bin/zsh";
   };
-
-  home.shellAliases = { zsh = "exec zsh"; };
-
-  home.file.".zshrc".text = ''
-    export SHELL=${pkgs.zsh}/bin/zsh
-    exec ${pkgs.zsh}/bin/zsh
-  '';
 }

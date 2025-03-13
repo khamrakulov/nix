@@ -2,10 +2,11 @@
 {
   home.username = "xfeusw";
   home.homeDirectory = "/home/xfeusw";
+  home-manager.useGlobalPckgs = true;
 
   imports = [
     ./packages.nix
-    ./shell.nix
+    # ./shell.nix
     ./modules/programs/default.nix
     ./fonts.nix
   ];
