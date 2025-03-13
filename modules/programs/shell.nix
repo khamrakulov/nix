@@ -36,14 +36,5 @@
       plugins = ["git" "thefuck"];
       theme = "robbyrussell";
     };
-
-    # With Antidote:
-    antidote = {
-      enable = true;
-      plugins = [''
-        zsh-users/zsh-autosuggestions
-        ohmyzsh/ohmyzsh path:lib/git.zsh
-      ''];
-    };
   };
 }
