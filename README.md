@@ -20,7 +20,7 @@ To enable flakes, modify the Nix configuration:
 3. Save the file and exit.
 4. Restart the Nix daemon:
    ```sh
-   sudo systemctl restart nix-daemon
+   sudo nixos-rebuild switch
    ```
 
 ## Applying NixOS Configuration
