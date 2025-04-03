@@ -11,7 +11,7 @@ To enable flakes, modify the Nix configuration:
 
 1. Open the Nix configuration file:
    ```sh
-   sudo nano /etc/nixos/configuration.conf
+   sudo nano /etc/nixos/configuration.nix
    ```
 2. Add or modify the following lines:
    ```ini
