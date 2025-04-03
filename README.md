@@ -15,7 +15,7 @@ To enable flakes, modify the Nix configuration:
    ```
 2. Add or modify the following lines:
    ```ini
-   nix.settings.experimental-features = [nix-command flakes];
+   nix.settings.experimental-features = [ "nix-command" "flakes" ];
    ```
 3. Save the file and exit.
 4. Restart the Nix daemon:
